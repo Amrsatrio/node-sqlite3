@@ -101,7 +101,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: matrix.node == 18
         with:
-          name: prebuilt-binaries
+          name: prebuilt-binaries-${{ matrix.os }}-host${{ matrix.host }}-target${{ matrix.target }}.zip
           path: prebuilds/*
           retention-days: 7
 
