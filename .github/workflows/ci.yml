@@ -20,7 +20,7 @@ jobs:
       matrix:
         os:
           - macos-latest
-          - ubuntu-20.04
+          - ubuntu-22.04
           - windows-latest
         host:
           - x64
@@ -29,7 +29,7 @@ jobs:
         node:
           - 20
         include:
-          - os: ubuntu-20.04
+          - os: ubuntu-22.04
             node: 20
             host: x64
             target: arm64
@@ -175,7 +175,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: matrix.node == 20
         with:
-          name: prebuilt-binaries
+          name: prebuilt-binaries-${{ matrix.target }}-${{ matrix.variant }}.zip
           path: prebuilds/*
           retention-days: 7
 
